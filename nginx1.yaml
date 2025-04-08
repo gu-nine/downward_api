@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  namespace: monitoring
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      command: ["/bin/sh"]
+      args: ["-c", "sleep 3600"]
